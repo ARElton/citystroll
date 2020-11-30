@@ -10,18 +10,18 @@ One sentence app description:
 This app will connect a user with a walking tour of a city of their choice. 
 Domain model with attributes:
 
- User --< Uploads >-- City
+ User --< Post >-- City
 
  User--< Favorites >-- City 
 
- User --< Comments >-- Uploads
+ User --< Comments >-- Post
             
  User --< Friends >-- User
 
-User: name (str), age(int)
-Uploads: title (str), user_id (int), city_id (int), link (str), timestamp
+User: name(str), age(int), username(str), password(str)
+Post: title (str), user_id (int), city_id (int), link (str), timestamp
 Favorites: user_id (int), city_id (int)
-Comments:  user_id (int), upload_id (int), text (text)
+Comments:  user_id (int), post_id (int), text (text)
 City: name(str), country (str)
 Friends: user_id (int), user_id (int), timestamp 
 
