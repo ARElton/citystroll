@@ -1,24 +1,56 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+citystroll
+Owner/s: 
+Amelia Elton & Simon Cohen
 
-Things you may want to cover:
 
-* Ruby version
+Mod and Cohort:
+Mod2 1026
+One sentence app description:
+This app will connect a user with a walking tour of a city of their choice. 
+Domain model with attributes:
 
-* System dependencies
+ User --< Uploads >-- City
 
-* Configuration
+ User--< Favorites >-- City 
 
-* Database creation
+ User --< Comments >-- Uploads
+            
+ User --< Friends >-- User
 
-* Database initialization
+User: name (str), age(int)
+Uploads: title (str), user_id (int), city_id (int), link (str), timestamp
+Favorites: user_id (int), city_id (int)
+Comments:  user_id (int), upload_id (int), text (text)
+City: name(str), country (str)
+Friends: user_id (int), user_id (int), timestamp 
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+User Stories:
 
-* Deployment instructions
+E.g. User will be able to:
+Create an account with secure password,
+Log in,
+View their Favorite cities,
+View cities walking videos,
+Upload a walking video via Youtube link,
+Select a city from a map,
+Leave comments on a video,
+Delete account,
+Become “friends” with other user 
+etc.
 
-* ...
+
+Timeline:
+
+Monday:  activerecord models, controller actions, routes, view pages
+Tuesday: user functionality
+Wednesday: user functionality, helper methods
+Thursday: css, map?, view pages
+Friday: 
+Weekend:
+Monday:
+
+
+
+
