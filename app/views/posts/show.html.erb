@@ -1,0 +1,14 @@
+
+
+<h1><%=@post.title%></h1>
+
+<%y_link = YouTubeRails.youtube_embed_url_only(@post.link)%>
+
+
+
+
+<iframe width="1440" height="620" src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<h3>Comments:</h3>
+<%= render partial: 'comments/form', collection: @post.comments.reverse %>

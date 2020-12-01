@@ -1,0 +1,14 @@
+
+<h3>Leave a Reply:</h3>
+
+<%= form_for @comment do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :text %>
+    <%= f.text_area :text, :cols => 30, :rows => 10 %>
+    <br>
+    <br>
+    <%= f.submit %>
+<% end %>

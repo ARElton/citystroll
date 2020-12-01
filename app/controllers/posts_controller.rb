@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-    before_action: 
+    
+    #before_action :find_post, only [:show]
 
     def index
         @posts = Post.all
@@ -7,10 +8,13 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+        @comment = Comment.new
     end
 
     def new
         @post = Post.new
+        @users = User.all
+        @cities = City.all
     end
 
     def create

@@ -9,16 +9,21 @@
 User.destroy_all 
 Post.destroy_all 
 City.destroy_all
+Comment.destroy_all
 
 10.times do 
-    User.create(name: Faker::Games::Zelda.character, age: rand(10..100), username: Faker::JapaneseMedia::DragonBall.character, password: " " )
+    User.create!(name: Faker::Games::Zelda.character, age: rand(10..100), username: Faker::JapaneseMedia::DragonBall.character, password: " " )
 end
 
 20.times do 
-    City.create(name: Faker::Address.city, country: Faker::Address.country, population: rand(1000000..99999999999))
+    City.create!(name: Faker::Address.city, country: Faker::Address.country, population: rand(1000000..99999999999))
 end
 
-15.times do
-    Post.create(title: "random" , user_id: User.all.sample.id, city_id: City.all.sample.id, link: "https://www.youtube.com/embed/i8s_T4NpBPs")
+16.times do
+    Post.create!(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.all.sample.id, link: "https://www.youtube.com/watch?v=pRuLtyIEBDA")
+end
+
+30.times do 
+    Comment.create(user_id: User.all.sample.id, post_id: Post.all.sample.id, text: Faker::TvShows::TheFreshPrinceOfBelAir.quote)
 end
 
