@@ -1,9 +1,9 @@
 
 <h3>Leave a Reply:</h3>
 
-<%= form_for @comment do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, @users, :id, :name %>
     <br>
     <br>
     <%= f.label :text %>
