@@ -1,0 +1,23 @@
+<%if flash[:errors]%>
+    <ul>
+    <%=flash[:user_errors].each do |error|%>
+    <li><%=error%></li>
+    <%end%>
+    </ul>
+<%end%>
+
+<h1>Sign Up</h1>
+
+ <%= form_for @user do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br>
+    <%= f.label :password %>
+    <%= f.text_field :password%>
+    <br>
+    <%= f.submit %>
+    
+ <% end %>
