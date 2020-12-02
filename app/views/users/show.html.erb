@@ -1,1 +1,10 @@
 <h1><%=@user.name%></h1>
+
+<% @user.posts.each do |post| %>
+<p> 
+<%= link_to post.title, post_path(post) %>
+</p>
+<%y_link = YouTubeRails.youtube_embed_url_only(post.link)%>
+<iframe width="360" height="155"src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% end %>
+

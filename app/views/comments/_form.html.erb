@@ -2,9 +2,7 @@
 <h3>Leave a Reply:</h3>
 
 <%= form_for ([@post, @post.comments.build]) do |f| %>
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, @users, :id, :name %>
-    <br>
+    <%= f.hidden_field :user_id, value: @current_user.id %>
     <br>
     <%= f.label :text %>
     <%= f.text_area :text, :cols => 30, :rows => 10 %>

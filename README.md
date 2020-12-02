@@ -12,7 +12,7 @@ Domain model with attributes:
 
  User --< Post >-- City
 
- User--< Favorites >-- City 
+ User--< Favorites >-- Post 
 
  User --< Comments >-- Post
             
@@ -57,6 +57,8 @@ Monday:
 TODO:
 
 refactor with before action
-
 refactor routes
+message for duplicate favorites
+
+
 

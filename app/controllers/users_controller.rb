@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+    skip_before_action :authorized, only: [:new, :create]
+
     def new
         @user = User.new 
     end
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect_to user_path(user)
         else 
-            flash[:user_errors] = user.errors.full_messages 
+            flash[:errors] = user.errors.full_messages 
             redirect_to new_user_path 
         end
     end
@@ -21,6 +23,12 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
+        # if @user== @current_user
+        #     render :show
+        # else
+        #     redirect_to aliens_path 
+        #     flash[:user_errors] = 'Can only see your own profile silly alien'
+        # end 
     end
 
     def edit 

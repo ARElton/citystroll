@@ -3,13 +3,19 @@
 <h1><%=@post.title%></h1>
 
 <%y_link = YouTubeRails.youtube_embed_url_only(@post.link)%>
-
-
-
-
 <iframe width="1440" height="620" src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<%if @current_user == @post.user%>
+    <%=button_to "Delete", post_path(@post), method: :delete %>
+<%end%>
+
+<%=button_to "Favorite", new_favorite_path(@post)%>
+
+<%if flash[:fav]%>
+    <%=flash[:fav]%>
+<%end%>
 
 <h3>Comments:</h3>
 <%= render @post.comments %>
 <%= render 'comments/form' %>
+

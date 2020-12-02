@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :favorites
+  resources :favorites, except: [:new, :create]
   resources :cities
   root 'cities#index'
   resources :users
@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   get "/sessions/new", to: 'sessions#new', as: 'new_login'
 
   post "/sessions/login", to: 'sessions#login', as: 'login'
+
+  post "/favorites/:id", to: 'favorites#create', as: 'new_favorite'
  
 end

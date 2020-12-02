@@ -6,14 +6,12 @@
     </ul>
 <%end%>
 
-<h1>Create a Walking Post</h1>
+<h1>Upload Walking Tour</h1>
 
  <%= form_for @post do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
-    <br>
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, @users, :id, :name%>
+    <%= f.hidden_field :user_id, value: @current_user.id %>
     <br>
     <%= f.label :city_id %>
     <%= f.collection_select :city_id, @cities, :id, :name%>
