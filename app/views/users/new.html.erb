@@ -1,9 +1,10 @@
-<%if flash[:errors]%>
-    <ul>
+
+<%if flash[:user_errors]%>
+<ul>
     <%=flash[:user_errors].each do |error|%>
     <li><%=error%></li>
     <%end%>
-    </ul>
+</ul>
 <%end%>
 
 <h1>Sign Up</h1>

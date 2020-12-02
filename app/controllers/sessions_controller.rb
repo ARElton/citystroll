@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   
     def logout
-        sessions.delete(:user_id)
+        session.delete(:user_id)
         redirect_to new_user_path
     end
 
@@ -9,10 +9,11 @@ class SessionsController < ApplicationController
     end
 
     def login
-        user = User.find_by(name: params[:login_info][:user_name])
-    
-        if user && user.authenticate(params[:login_info][:password])
-          sessions[:user_id] = user.id
+      byebug
+        user = User.find_by(name: params[:session][:user_name])
+
+        if user && user.authenticate(params[:session][:password])
+          session[:user_id] = user.id
           redirect_to users_path(user.id)
         else
           flash[:errors] = "Username or Password does not match" 
