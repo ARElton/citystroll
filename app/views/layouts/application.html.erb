@@ -1,4 +1,65 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
+    <title>citystroll</title>
+</head>
+<body>
+  <h1 class="title">citystroll</h1>
+  <div class="block">
+      <div class="columns">
+        <div class="column">
+          <p class="notification"><%= link_to "Cities", cities_path %></p>
+        </div>
+        <div class="column">
+          <p class="notification"><%= link_to "Upload", new_post_path %></p>
+        </div>
+        <div class="column">
+          <p class="notification">Auto</p>
+        </div>
+        <div class="column">
+          <p class="notification">Auto</p>
+        </div>
+        <div class="column">
+          <p class="notification">Auto</p>
+        </div>
+        <div class="column">
+          <p class="notification">Auto</p>
+        </div>
+      </div>
+    </div>
+
+    
+
+
+
+        <%if @current_user%>
+      
+  
+        <h1><%= link_to "My Posts", user_path(@current_user.id)%></h1>
+        <h1><%= link_to "Favorites", favorites_path(@current_user.id) %></h1>
+        <%end%>
+
+        <% if @current_user %>
+          <h1><%= link_to "Logout", logout_path, method: :delete  %></h1>
+          <h1>Welcome <%= @current_user.name.capitalize %></h1>
+        <% else %>
+          <h1><%= link_to "Sign Up", new_user_path %></h1>
+          <h1><%= link_to "Login", new_login_path %></h1>
+        <% end %> 
+    
+    <%= yield %>
+  </body>
+
+
+</html>
+
+
+<!--<!DOCTYPE html>
 <html>
   <head>
     <title>Citystroll</title>
@@ -30,6 +91,4 @@
     </ul>
     <%= yield %>
   </body>
-</html>
-
- 
+</html>-->

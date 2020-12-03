@@ -9,7 +9,7 @@
     <%=button_to "Delete", post_path(@post), method: :delete %>
 <%end%>
 
-<%=button_to "Favorite", new_favorite_path(@post)%>
+<%=button_to "Favorite", new_favorite_path(@post), class: "button is-success"%>
 
 <%if flash[:fav]%>
     <%=flash[:fav]%>
