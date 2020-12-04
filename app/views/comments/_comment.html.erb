@@ -1,15 +1,15 @@
 
   <div class="block">
-      <div class="box">
-        <h1 class="title"><%= comment.user.name %></h1>
-        <p><%= comment.text %></p>
-      </div>
+    <div class="box">
+      <h1 class="title is-4"><%= comment.user.name %></h1>
+      <p class="content is-medium"><%= comment.text %></p>
     </div>
+  </div>
 
 
 <% if @current_user.id == comment.user.id %>
   <%= button_to "Delete", post_comment_path(@post, comment), method: :delete, class: "button is-danger" %>
-  <% end %>
+<% end %>
 
 
   

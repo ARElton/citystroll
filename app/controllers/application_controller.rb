@@ -10,6 +10,4 @@ class ApplicationController < ActionController::Base
         redirect_to cities_path unless @current_user
     end 
 
-
-
 end

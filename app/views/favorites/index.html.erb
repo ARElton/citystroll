@@ -1,8 +1,15 @@
-<h1>Favorites</h1>
+<div class="container">
+    <div class="pb-100">
+            <div class="pt-3">
+                <h1 class="title is-3">Favorites</h1>
+            </div>
+        </div>
+    <div class="block">
+        <div class="box">
+        <%@current_user.favorites.each do |fav|%>
+            <li><%= link_to fav.post.title, post_path(fav.post)%></li>
+        <%end%>          
+        </div>
+    </div>
+</div>
 
-
-<ul>
-    <%@current_user.favorites.each do |fav|%>
-        <li><%= link_to fav.post.title, post_path(fav.post)%></li>
-    <%end%>
-</ul>

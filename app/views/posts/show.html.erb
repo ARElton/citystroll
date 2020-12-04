@@ -1,21 +1,27 @@
+<div class="container">
+<h1 class="title is-1"><%=@post.title%></h1>
 
-
-<h1><%=@post.title%></h1>
-
-<%y_link = YouTubeRails.youtube_embed_url_only(@post.link)%>
-<iframe width="1440" height="620" src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<figure class="image is-16by9">
+    <%y_link = YouTubeRails.youtube_embed_url_only(@post.link)%>
+    <iframe class="has-ratio" width="1000" height="465" src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
 
 <%if @current_user == @post.user%>
-    <%=button_to "Delete", post_path(@post), method: :delete %>
+    <div class="py-3">
+        <div class="level-left">
+            <p class='level-item'><%=button_to "Delete", post_path(@post), class: "button is-danger", method: :delete %></p>
+            <p class='level-item'><%=button_to "Favorite", new_favorite_path(@post), class: "button is-success"%></p>
+        </div>
+    </div>
 <%end%>
-
-<%=button_to "Favorite", new_favorite_path(@post), class: "button is-success"%>
 
 <%if flash[:fav]%>
-    <%=flash[:fav]%>
+    <p class="content is-medium"> <%=flash[:fav]%></p>
 <%end%>
 
-<h3>Comments:</h3>
+<h5 class="title is-5">Comments: </h5>
 <%= render @post.comments %>
+
 <%= render 'comments/form' %>
 
+</div>

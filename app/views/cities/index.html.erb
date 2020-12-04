@@ -1,10 +1,21 @@
+<div class="pb-100">
+    <div class="pt-3">
+        <div class="pl-6">
+            <h3 class="title is-3">Cities</h3>
+         </div>
+    </div>
+</div>
 
-
-
-<h1>Cities</h1>
 <%if flash[:city_error]%>
-    <%=flash[:city_error]%>
+    <p class="content is-medium" ><%=flash[:city_error]%></p>
 <%end%>
-<% @cities.each do |city| %>
-<p> <%= link_to city.name, city_path(city) %></p>
-<% end %>
+
+<div class="hero">
+    <div class="hero-body">
+        <% @cities.each do |city| %>
+            <div class="pl-6">
+               <p class="title is-4"></p>  <%= link_to city.name, city_path(city) %></p>
+            </div> 
+        <% end %>
+    </div>
+</div>

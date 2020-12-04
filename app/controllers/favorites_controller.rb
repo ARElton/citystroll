@@ -5,4 +5,5 @@ class FavoritesController < ApplicationController
        flash[:fav] = "Successfully added to Favorites"
        redirect_back fallback_location: user_path(@current_user)
     end
+    
 end

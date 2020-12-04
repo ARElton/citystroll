@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     resources :comments 
   end
 
-  delete "sessions/logout", to: 'sessions#logout', as: 'logout'
+
+  get "sessions/logout", to: 'sessions#logout', as: 'logout'
 
   get "/sessions/new", to: 'sessions#new', as: 'new_login'
 

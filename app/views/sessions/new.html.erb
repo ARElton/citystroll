@@ -1,15 +1,24 @@
-
 <%if flash[:errors]%>
-    <%=flash[:errors]%>
+   <h4 class="title is-4"> <%=flash[:errors]%></h4>
 <%end%>
 
-<%= form_for :login_info, url: login_path do |f| %>
 
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name %>
-      <br>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-	<br>
-	<%= f.submit %> 
-<% end %>
+
+ <div class="section">
+    <%=simple_form_for :login_info, url: login_path do |f| %>
+       
+        <div class="field">
+            <div class="control">
+                <%= f.input :user_name, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label' } %>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                <%=f.input :password, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label' } %>
+            </div>
+        </div>
+
+        <%= f.button :submit, 'Login', class: "button is-primary" %>
+    <% end %>
+</div>

@@ -5,6 +5,8 @@ gem 'faker', '~> 2.15', '>= 2.15.1'
 
 gem 'youtube_rails'
 
+gem 'simple_form'
+
 ruby '2.6.1'
 
 # gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
