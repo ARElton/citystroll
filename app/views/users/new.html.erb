@@ -1,11 +1,11 @@
-
-<%if flash[:user_errors]%>
 <ul>
-    <%=flash[:user_errors].each do |error|%>
-    <li><%=error%></li>
+<%if flash[:user_errors]%>
+    <%flash[:user_errors].each do |error|%>
+    <li class="pl-5"><%=error%></li>
     <%end%>
-</ul>
+
 <%end%>
+</ul>
 
 
  <div class="section">
