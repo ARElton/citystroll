@@ -2,7 +2,7 @@ class CitiesController < ApplicationController
     skip_before_action :authorized, only: [:index, :show]
 
     def index
-        @cities = City.all 
+        @cities = City.cities_alph
     end
 
     def show

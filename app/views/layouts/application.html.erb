@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <title>citystroll</title>
       
 </head>
@@ -19,7 +25,8 @@
           <div class="pt-6">
             <h1 class="title is-1">cityStroll</h1>
           </div>
-            <img src="http://clipart-library.com/images/ATbreEAac.jpg", alt="skyline" width="1153">
+            <!--<img src="/app/assets/images/city.png", alt="skyline" width="1153">-->
+            <%= image_tag("city.png",  width: '1153')%>
         </div>
       </div>
       
@@ -41,10 +48,11 @@
                   
                       <div class="level-left">
           
-                          <div class="title is-6"> Hi <%= @current_user.name.capitalize %>!</div>
+                          <div class="title is-5"> Hi <%= @current_user.name.capitalize %>!</div>
                           
-                          <div class="title is-7"><%= link_to "(Not you? Logout) ", logout_path%></div>
+                          <div class="title is-6"><%= link_to "(Not you? / Logout) ", logout_path, data: { confirm: "Are you sure you'd like to logout?" }%></div>
 
+                          
                         </div> <!-- block  -->
                  
        

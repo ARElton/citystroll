@@ -1,9 +1,5 @@
-<div class="pb-100">
-    <div class="pt-3">
-        <div class="pl-6">
-            <h3 class="title is-3">Cities</h3>
-         </div>
-    </div>
+<div class="has-text-centered">
+    <h3 class="title is-1">Cities</h3>
 </div>
 
 <%if flash[:city_error]%>
@@ -13,8 +9,14 @@
 <div class="hero">
     <div class="hero-body">
         <% @cities.each do |city| %>
-            <div class="pl-6">
-               <p class="title is-4"></p>  <%= link_to city.name, city_path(city) %></p>
+            <div class="has-text-centered">
+                <div>
+                                    
+                    <div class="has-text-centered">
+                            <p class="title is-3"><%= link_to city.name, city_path(city) %> ||<%= city.country %></p> 
+                    </div>
+                                   
+                </div>
             </div> 
         <% end %>
     </div>

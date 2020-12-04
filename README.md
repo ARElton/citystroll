@@ -15,8 +15,6 @@ Domain model with attributes:
  User--< Favorites >-- Post 
 
  User --< Comments >-- Post
-            
- User --< Friends >-- User
 
 User: name(str), age(int), username(str), password(str)
 Post: title (str), user_id (int), city_id (int), link (str), timestamp
@@ -37,7 +35,6 @@ Upload a walking video via Youtube link,
 Select a city from a map,
 Leave comments on a video,
 Delete account,
-Become “friends” with other user 
 etc.
 
 

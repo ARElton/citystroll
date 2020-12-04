@@ -45,11 +45,16 @@ City.create(name: "Denver", country: "United States", population: 734134)
 #     City.create!(name: Faker::Address.city, country: Faker::Address.country, population: rand(1000000..99999999999))
 # end
 
-16.times do
-    Post.create!(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.all.sample.id, link: "https://www.youtube.com/watch?v=pRuLtyIEBDA")
-end
+# 16.times do
+#     Post.create!(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.all.sample.id, link: "https://www.youtube.com/watch?v=pRuLtyIEBDA")
+# end
 
 30.times do 
     Comment.create(user_id: User.all.sample.id, post_id: Post.all.sample.id, text: Faker::TvShows::TheFreshPrinceOfBelAir.quote)
 end
+
+30.times do 
+    Comment.create(user_id: User.all.sample.id, post_id: Post.all.sample.id, text: Faker::Movies::HitchhikersGuideToTheGalaxy.quote)
+end
+
 

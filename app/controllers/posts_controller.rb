@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     def create
         post = Post.create(strong_params)
         if post.valid?
-            redirect_to post_path(post)
+            redirect_to user_path(post.user.id)
         else
             flash[:user_errors] = post.errors.full_messages
             redirect_to new_post_path
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     private
 
     def strong_params
-        params.require(:post).permit(:user_id, :city_id, :title, :link)
+        params.require(:post).permit(:user_id, :city_id, :title, :link, :description)
     end
 
 end

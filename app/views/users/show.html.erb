@@ -1,24 +1,35 @@
 <div class="pb-100">
         <div class="pt-3">
             <div class="pl-6">
-                <h1 class="title is-3">My Posts</h1>
+                <h1 class="title is-3"><%=@user.name.capitalize%>'s Posts</h1>
             </div>
         </div>
     </div>
 
 <div class="section">
     <div class="container">
-    <% @user.posts.each do |post| %>
-        <div class="media">
-            <div class="media-content">
-           <p class="title is-2"> <%= link_to post.title, post_path(post) %></p>
-            <figure class="image is-16by9">
-            <%y_link = YouTubeRails.youtube_embed_url_only(post.link)%>
-            <iframe class="has-ratio" width="360" height="155"src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </figure>
-            <% end %>
+        <div class="block">
+            <div class="columns">
+                <% @user.posts.each do |post| %>
+
+
+                                            <div class="column">
+                                                <div class="media">
+                                                    <div class="media-content">
+                                                        <p class="title is-3"> <%= link_to post.title, post_path(post) %></p>
+                                                        <%y_link = YouTubeRails.youtube_embed_url_only(post.link)%>
+                                                        <iframe class="has-ratio" width="320" height="180"src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                  
+                <% end %>
             </div>
         </div>
     </div>
 </div>
 
+
+
+       
