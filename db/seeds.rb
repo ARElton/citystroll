@@ -11,8 +11,8 @@ Post.destroy_all
 City.destroy_all
 Comment.destroy_all
 
-10.times do 
-    User.create!(name: Faker::Games::Zelda.character, age: rand(10..100), username: Faker::JapaneseMedia::DragonBall.character, password: " " )
+7.times do 
+    User.create(name: Faker::Games::Zelda.character, age: rand(10..100), username: Faker::JapaneseMedia::DragonBall.character, password: "test123" )
 end
 
 City.create(name: "Tokyo", country: "Japan", population: 37435191)
@@ -41,20 +41,32 @@ City.create(name: "Austin", country: "United States", population: 988218)
 City.create(name: "San Francisco", country: "United States", population: 896047)
 City.create(name: "Denver", country: "United States", population: 734134) 
 
-# 20.times do 
-#     City.create!(name: Faker::Address.city, country: Faker::Address.country, population: rand(1000000..99999999999))
-# end
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Paris").id, link: "https://www.youtube.com/watch?v=ME2zyNBh3JM&t=2248s&ab_channel=ProwalkTours", description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Delhi").id, link: "https://www.youtube.com/watch?v=o9-bTrr3qbY", description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Shanghai").id, link: "https://www.youtube.com/watch?v=Y1iw8aTVXuY", description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Tokyo").id, link: "https://www.youtube.com/watch?v=HYSMJ-lM2t0", description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Istanbul").id, link: "https://www.youtube.com/watch?v=8mHuAfrtDNg", description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Ho Chi Minh City").id, link: "https://www.youtube.com/watch?v=N0crXGYLYlg", description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Austin").id, link: "https://www.youtube.com/watch?v=BCbAb4CzU14", description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Caracas").id, link: "https://www.youtube.com/watch?v=08dTVkLqSL8", description: Faker::Movies::HitchhikersGuideToTheGalaxy.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Saint Petersburg").id, link: "https://www.youtube.com/watch?v=8iSBVIHCRdc", description: Faker::Quotes::Shakespeare.romeo_and_juliet_quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Rome").id, link: "https://www.youtube.com/watch?v=2rjZXl3NmT8", description: Faker::Quotes::Shakespeare.romeo_and_juliet_quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Seoul").id, link: "https://www.youtube.com/watch?v=3P1CnWI62Ik&ab_channel=ImagineyourKorea", description: Faker::TvShows::TwinPeaks.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Denver").id, link: "https://www.youtube.com/watch?v=FBpll9xvjn8", description: Faker::Quotes::Shakespeare.romeo_and_juliet_quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "San Francisco").id, link: "https://www.youtube.com/watch?v=AIqlkQlIzCY", description: Faker::Quotes::Shakespeare.romeo_and_juliet_quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Austin").id, link: "https://www.youtube.com/watch?v=RLRnb84p3TM&ab_channel=IslandHopperTV", description: Faker::TvShows::TwinPeaks.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Copenhagen").id, link: "https://www.youtube.com/watch?v=Nl69sN5PtgM", description: Faker::TvShows::TwinPeaks.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Seoul").id, link: "https://www.youtube.com/watch?v=rHdRH0eDTos&ab_channel=SeoulWalker", description: Faker::TvShows::TwinPeaks.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Berlin").id, link: "https://www.youtube.com/watch?v=xGIBK3teEak", description: Faker::TvShows::TwinPeaks.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Berlin").id, link: "https://www.youtube.com/watch?v=F1K05Wv6CBo", description: Faker::TvShows::HeyArnold.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Bangkok").id, link: "https://www.youtube.com/watch?v=w_VcIjBnKeU", description: Faker::TvShows::HeyArnold.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Barcelona").id, link: "https://www.youtube.com/watch?v=EGYXw3CwL-0", description: Faker::TvShows::HeyArnold.quote)
 
-# 16.times do
-#     Post.create!(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.all.sample.id, link: "https://www.youtube.com/watch?v=pRuLtyIEBDA")
-# end
 
-30.times do 
+
+40.times do 
     Comment.create(user_id: User.all.sample.id, post_id: Post.all.sample.id, text: Faker::TvShows::TheFreshPrinceOfBelAir.quote)
 end
 
-30.times do 
-    Comment.create(user_id: User.all.sample.id, post_id: Post.all.sample.id, text: Faker::Movies::HitchhikersGuideToTheGalaxy.quote)
-end
 
 
