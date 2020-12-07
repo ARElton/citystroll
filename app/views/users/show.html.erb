@@ -1,31 +1,23 @@
 <div class="pb-100">
-        <div class="pt-3">
-            <div class="pl-6">
-                <h1 class="title is-3"><%=@user.name.capitalize%>'s Posts</h1>
-            </div>
+    <div class="pt-3">
+        <div class="pl-6">
+            <h1 class="title is-3"><%=@user.name.capitalize%>'s Posts</h1>
         </div>
     </div>
+</div>
 
 <div class="section">
     <div class="container">
         <div class="block">
-            <div class="columns">
-                <% @user.posts.each do |post| %>
-
-
-                                            <div class="column">
-                                                <div class="media">
-                                                    <div class="media-content">
-                                                        <p class="title is-3"> <%= link_to post.title, post_path(post) %></p>
-                                                        <%y_link = YouTubeRails.youtube_embed_url_only(post.link)%>
-                                                        <iframe class="has-ratio" width="320" height="180"src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                  
-                <% end %>
-            </div>
+            <% @user.posts.each do |post| %>
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-3"> <%= link_to post.title, post_path(post) %></p>
+                        <%y_link = YouTubeRails.youtube_embed_url_only(post.link)%>
+                        <iframe class="has-ratio" width="320" height="180"src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            <% end %>
         </div>
     </div>
 </div>
