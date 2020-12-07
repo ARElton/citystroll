@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   post "/sessions/login", to: 'sessions#login', as: 'login'
 
   post "/favorites/:id", to: 'favorites#create', as: 'new_favorite'
+
+  post "/likes/:id", to: 'posts#like', as: 'like_post'
  
 end
+
+

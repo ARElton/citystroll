@@ -39,10 +39,19 @@ class PostsController < ApplicationController
         redirect_to user_path(@current_user)
     end
 
+    def like
+        
+        post = Post.find(params[:id])
+        post.likes +=1
+        post.save
+        
+        redirect_to post_path(post)
+    end
+
     private
 
     def strong_params
-        params.require(:post).permit(:user_id, :city_id, :title, :link, :description)
+        params.require(:post).permit(:user_id, :city_id, :title, :link, :description, :id)
     end
 
 end
