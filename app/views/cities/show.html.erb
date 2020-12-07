@@ -8,10 +8,10 @@
             <div class="media">
               <div class="media-content">
               <h2 class="title is-3"><%= link_to post.title, post_path(post) %></h2>
-              <figure class="image is-16by9">
+            
               <%y_link = YouTubeRails.youtube_embed_url_only(post.link)%>
-              <iframe class="has-ratio" width="640" height="360"src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </figure>
+              <iframe class="has-ratio" width="320" height="180"src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              
               <br>
               <br>
               <%end%>

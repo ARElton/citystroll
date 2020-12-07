@@ -9,11 +9,11 @@
 <div class="section">
     <div class="container">
         <div class="block">
-            <div class="columns">
+        
                 <% @user.posts.each do |post| %>
+                       
 
 
-                                            <div class="column">
                                                 <div class="media">
                                                     <div class="media-content">
                                                         <p class="title is-3"> <%= link_to post.title, post_path(post) %></p>
@@ -21,11 +21,19 @@
                                                         <iframe class="has-ratio" width="320" height="180"src=<%="#{y_link}"%> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                     </div>
                                                 </div>
-                                            </div>
+
+
+
+
+                        
+                        
+
+                                          
+                                      
 
                   
                 <% end %>
-            </div>
+         
         </div>
     </div>
 </div>

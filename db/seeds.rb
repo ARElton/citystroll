@@ -61,20 +61,24 @@ Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City
 Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Berlin").id, link: "https://www.youtube.com/watch?v=F1K05Wv6CBo", description: Faker::TvShows::HeyArnold.quote)
 Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Bangkok").id, link: "https://www.youtube.com/watch?v=w_VcIjBnKeU", description: Faker::TvShows::HeyArnold.quote)
 Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Barcelona").id, link: "https://www.youtube.com/watch?v=EGYXw3CwL-0", description: Faker::TvShows::HeyArnold.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Sao Paulo").id, link: "https://www.youtube.com/watch?v=xCT7VWU3I9U", description: Faker::TvShows::HeyArnold.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Mexico City").id, link: "https://www.youtube.com/watch?v=ER_szwLxHYk", description: Faker::TvShows::HeyArnold.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "London").id, link: "https://www.youtube.com/watch?v=MGMqLGvtNpY", description: Faker::TvShows::HeyArnold.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "New York City").id, link: "https://www.youtube.com/watch?v=-IpXdtWfneI", description: Faker::TvShows::HeyArnold.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Addis Ababa").id, link: "https://www.youtube.com/watch?v=XPJ_3J4Cmvc", description: Faker::TvShows::HeyArnold.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Nairobi").id, link: "https://www.youtube.com/watch?v=vDo5H3tT65Q", description: Faker::TvShows::HeyArnold.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Cape Town").id, link: "https://www.youtube.com/watch?v=14JALDJKYko", description: Faker::TvShows::HeyArnold.quote)
+Post.create(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.find_by(name: "Stockholm").id, link: "https://www.youtube.com/watch?v=Jr9x-RB4E1U", description: Faker::TvShows::HeyArnold.quote)
 
-<<<<<<< HEAD
+
+
+
 16.times do
     Post.create!(title: Faker::Book.title, user_id: User.all.sample.id, city_id: City.all.sample.id, link: "https://www.youtube.com/watch?v=pRuLtyIEBDA")
 end
 
 30.times do 
     Comment.create!(user_id: User.all.sample.id, post_id: Post.all.sample.id, text: Faker::TvShows::TheFreshPrinceOfBelAir.quote)
-=======
-
-
-40.times do 
-    Comment.create(user_id: User.all.sample.id, post_id: Post.all.sample.id, text: Faker::TvShows::TheFreshPrinceOfBelAir.quote)
->>>>>>> b08411baf3462b7768e02c3a2c4b235efdb96bef
 end
 
 

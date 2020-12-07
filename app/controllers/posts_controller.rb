@@ -8,6 +8,13 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
         @comment = Comment.new
         @users = User.all
+
+        if @current_user
+            render :show
+        else
+            flash[:city_error] = "Sign up to view a post!"
+            redirect_to cities_path
+        end
     end
 
     def new

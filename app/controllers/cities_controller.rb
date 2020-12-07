@@ -3,6 +3,7 @@ class CitiesController < ApplicationController
 
     def index
         @cities = City.cities_alph
+        
     end
 
     def show
