@@ -13,6 +13,7 @@
             <p class='level-item'><%=button_to "Delete", post_path(@post), class: "button is-danger", method: :delete, data: { confirm: "Are you sure you'd like to delete this video?" } %></p>
         <%end%>
             <p class='level-item'><%=button_to "Favorite", new_favorite_path(@post), class: "button is-success"%></p>
+            <p class='level-item'><%=button_to "Like (#{@post.likes} likes)", like_post_path(@post), class: "button is-info"%></p>
         </div>
     </div>
 
@@ -29,9 +30,10 @@
         <p class="content is-medium"> <%=flash[:fav]%></p>
     <%end%>
 
-    <h5 class="title is-6">Comments: </h5>
-    <%= render @post.comments %>
-
-    <%= render 'comments/form' %>
+    <h5 class="title is-4 pt-3">Comments: </h5>
+        <div class="block">
+            <%= render @post.comments %>
+            <%= render 'comments/form' %>
+        </div>
 
 </div>

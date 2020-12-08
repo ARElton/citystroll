@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <title>citystroll</title>
       
 </head>
 <body>
-
   <div class="container">
     <!-- NAVBAR -->
-
     
       <div class="pt-2">
         <div class="level-right">
@@ -30,16 +26,10 @@
         </div>
       </div>
       
-
-
-
-
-
     <div class="block">
  
       <nav class="nav">
         <div class="nav-left">
-
           <a href="" class="nav-item">
           
           
@@ -51,25 +41,16 @@
                           <div class="title is-5"> Hi <%= @current_user.name.capitalize %>!</div>
                           
                           <div class="title is-6"><%= link_to "(Not you? / Logout) ", logout_path, data: { confirm: "Are you sure you'd like to logout?" }%></div>
-
                           
                         </div> <!-- block  -->
                  
        
-
             <%end%> 
      
           </a>
-
         </div>
       </nav>
     </div>
-
-
-
-
-
-
     <div class="container">
      <div class="nav-left nav-menu">
           <div class="block">
@@ -79,7 +60,6 @@
                   <%= link_to "Favorites", favorites_path(@current_user.id), class:"button is-light"%>
                   <%= link_to "Upload", new_post_path, class:"button is-light" %>
                 
-
               <% else %>
                   <%= link_to "Sign Up", new_user_path, class:"button is-light" %>
                   <%= link_to "Login", new_login_path, class:"button is-light" %>
@@ -87,14 +67,10 @@
           </div> <!-- block  -->
       </div> <!-- nav-left nav-menu  -->
     </div> <!-- container -->
-
     </div><!-- /. container -->
-
     <div style="margin-top:10px"></div>
  
     
     <%= yield %>
   </body>
-
-
 </html>
