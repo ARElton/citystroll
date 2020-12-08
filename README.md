@@ -6,8 +6,10 @@ Amelia Elton & Simon Cohen
 
 Mod and Cohort:
 Mod2 1026
-One sentence app description:
+
+App description:
 This app will connect a user with a walking tour of a city of their choice. 
+
 Domain model with attributes:
 
  User --< Post >-- City
@@ -17,45 +19,21 @@ Domain model with attributes:
  User --< Comments >-- Post
 
 User: name(str), age(int), username(str), password(str)
-Post: title (str), user_id (int), city_id (int), link (str), timestamp
-Favorites: user_id (int), city_id (int)
+Post: title (str), user_id (int), city_id (int), link (str), description(text), likes (int), timestamp
+Favorites: user_id (int), city_id (int), post_id (int), timestamp
 Comments:  user_id (int), post_id (int), text (text)
 City: name(str), country (str)
-Friends: user_id (int), user_id (int), timestamp 
 
 
 User Stories:
 
-E.g. User will be able to:
-Create an account with secure password,
+User will be able to:
+Create an account with a secure password,
 Log in,
-View their Favorite cities,
+View their Favorite posts,
 View cities walking videos,
 Upload a walking video via Youtube link,
-Select a city from a map,
+Select a city from a list,
 Leave comments on a video,
-Delete account,
-etc.
-
-
-Timeline:
-
-Monday:  activerecord models, controller actions, routes, view pages
-Tuesday: user functionality
-Wednesday: user functionality, helper methods
-Thursday: css, map?, view pages
-Friday: 
-Weekend:
-Monday:
-
-
-
-
-TODO:
-
-refactor with before action
-refactor routes
-message for duplicate favorites
-
-
-
+Delete their comments,
+Delete their posts
