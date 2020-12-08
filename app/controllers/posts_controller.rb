@@ -50,7 +50,7 @@ class PostsController < ApplicationController
     private
 
     def strong_params
-        params.require(:post).permit(:user_id, :city_id, :title, :link, :description)
+        params.require(:post).permit(:user_id, :city_id, :title, :link, :description, :likes)
     end
 
 end
