@@ -5,9 +5,9 @@
 <div class="hero">
     <div class="hero-body">
         <%if flash[:city_error]%>
-        <div class="notification is-warning">
-            <p><%=flash[:city_error]%></p>
-        </div>
+            <div class="notification is-warning">
+                <p><%=flash[:city_error]%></p>
+            </div>
         <%end%>
         <% @cities.each do |city| %>
             <div class="has-text-centered">
